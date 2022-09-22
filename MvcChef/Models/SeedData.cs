@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcChef.Data;
-using MvcChef.Models;
 using System;
 using System.Linq;
 
-namespace MvcChefs.Models
+namespace MvcChef.Models
 {
     public static class SeedData
     {
@@ -15,10 +14,9 @@ namespace MvcChefs.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<MvcChefContext>>()))
             {
-                // Look for any movies.
                 if (context.Chef.Any())
                 {
-                    return;   // DB has been seeded
+                    return;
                 }
 
                 context.Chef.AddRange(

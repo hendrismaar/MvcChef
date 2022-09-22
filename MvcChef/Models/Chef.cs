@@ -12,15 +12,15 @@ namespace MvcChef.Models
         [Required]
         [Display(Name = "First name")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$", ErrorMessage = "The chef's first name must be capitalized.")]
-        [StringLength(20, ErrorMessage = "The chef's name cannot exceed 10 characters.")]
+        [MaxLength(20)]
         public string FirstName { get; set; }
         [Required]
         [Display(Name = "Last name")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$", ErrorMessage = "The chef's last name must be capitalized.")]
-        [StringLength(20)]
+        [MaxLength(20)]
         public string LastName { get; set; }
         [Required]
-        [StringLength(30)]
+        [MaxLength(40)]
         public string Restaurant { get; set; }
     }
 }
