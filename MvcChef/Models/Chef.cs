@@ -22,5 +22,9 @@ namespace MvcChef.Models
         [Required]
         [MaxLength(40)]
         public string Restaurant { get; set; }
+        [Required]
+        [Display(Name = "Michelin Stars")]
+        [Range(0,5)]
+        public int MichelinStars { get; set; }
     }
 }

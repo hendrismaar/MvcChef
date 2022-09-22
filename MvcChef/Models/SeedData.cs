@@ -24,34 +24,39 @@ namespace MvcChef.Models
                     {
                         FirstName = "Gordon",
                         LastName = "Ramsay",
-                        Restaurant = "Hell's Kitchen"
+                        Restaurant = "Hell's Kitchen",
+                        MichelinStars = 5
                     },
 
                     new Chef
                     {
                         FirstName = "Guy",
                         LastName = "Fieri",
-                        Restaurant = "Johnny Garlic's"
+                        Restaurant = "Johnny Garlic's",
+                        MichelinStars = 4
                     },
 
                     new Chef
                     {
                         FirstName = "Micheal",
                         LastName = "Caines",
-                        Restaurant = "Mickeys Beach Bar and Restaurant"
+                        Restaurant = "Mickeys Beach Bar and Restaurant",
+                        MichelinStars = 1
                     },
 
                     new Chef
                     {
                         FirstName = "Jamie",
                         LastName = "Oliver",
-                        Restaurant = "Jamie Oliver's Diner Piccadilly"
+                        Restaurant = "Jamie Oliver's Diner Piccadilly",
+                        MichelinStars = 4
                     },
                     new Chef
                     {
                         FirstName = "Bobby",
                         LastName = "Flay",
-                        Restaurant = "GATO"
+                        Restaurant = "GATO",
+                        MichelinStars = 2
                     }
                 );
                 context.SaveChanges();

@@ -54,7 +54,7 @@ namespace MvcChef.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Restaurant")] Chef chef)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Restaurant,MichelinStars")] Chef chef)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MvcChef.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Restaurant")] Chef chef)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Restaurant,MichelinStars")] Chef chef)
         {
             if (id != chef.Id)
             {
