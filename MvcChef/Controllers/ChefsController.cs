@@ -20,9 +20,38 @@ namespace MvcChef.Controllers
         }
 
         // GET: Chefs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string chefRestaurant, string searchStringFN, string searchStringLN)
         {
-            return View(await _context.Chef.ToListAsync());
+            IQueryable<string> restaurantQuery = from c in _context.Chef
+                                                 orderby c.Restaurant
+                                                 select c.Restaurant;
+
+            var chefs = from c in _context.Chef
+                        select c;
+
+            if (!string.IsNullOrEmpty(searchStringFN))
+            {
+                chefs = chefs.Where(s => s.FirstName.Contains(searchStringFN));
+            }
+
+            if (!string.IsNullOrEmpty(searchStringLN))
+            {
+                chefs = chefs.Where(s => s.LastName.Contains(searchStringLN));
+            }
+
+
+            if (!string.IsNullOrEmpty(chefRestaurant))
+            {
+                chefs = chefs.Where(x => x.Restaurant == chefRestaurant);
+            }
+
+            var chefRestaurauntVM = new ChefRestaurantViewModel
+            {
+                Restaurants = new SelectList(await restaurantQuery.Distinct().ToListAsync()),
+                Chefs = await chefs.ToListAsync()
+            };
+
+            return View(chefRestaurauntVM);
         }
 
         // GET: Chefs/Details/5
