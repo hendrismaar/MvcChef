@@ -1,0 +1,32 @@
+﻿@model MvcChef.Models.Chef
+
+<div>
+    <h4>Chef</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Restaurant)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Restaurant)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MichelinStars)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MichelinStars)
+        </dd>
+    </dl>
+</div>
